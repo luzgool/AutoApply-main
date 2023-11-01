@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Auto-Fill</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e7eff6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 20px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type=email], input[type=password], input[type=text], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type=checkbox] {
+            margin-right: 10px;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type=submit]:hover {
+            background-color: #218838;
+        }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 20px;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Job Application Auto-Fill</h1>
+        <form action="/cgi-bin/handle_form.py" method="post">
+            <h2>Login Credentials</h2>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <!-- Search Parameters -->
+            <h2>Search Parameters</h2>
+            <label for="remote">Remote:</label>
+            <input type="checkbox" id="remote" name="remote">
+            <label for="experienceLevel">Experience Level:</label>
+            <select id="experienceLevel" name="experienceLevel">
+                <option value="internship">Internship</option>
+                <option value="entry">Entry</option>
+                <option value="associate">Associate</option>
+                <option value="mid-senior level">Mid-Senior Level</option>
+                <option value="director">Director</option>
+                <option value="executive">Executive</option>
+            </select>
+            <!-- Add more search parameters here -->
+
+            <!-- Job Preferences -->
+            <h2>Job Preferences</h2>
+            <label for="positions">Positions (comma-separated):</label>
+            <input type="text" id="positions" name="positions">
+            <label for="locations">Locations (comma-separated):</label>
+            <input type="text" id="locations" name="locations">
+            <!-- Add more job preferences here -->
+
+            <!-- Personal Information -->
+            <h2>Personal Information</h2>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <!-- Add more personal information fields -->
+
+            <!-- EEO Information -->
+            <h2>EEO Information</h2>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <!-- Add more gender options here -->
+            </select>
+            <!-- Add more EEO fields here -->
+            <input type="submit" value="Start Auto-Fill">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,340 @@
+email: luzgool@berkeley.edu
+password: bright551
+
+disableAntiLock: False
+
+remote: False
+
+sort:
+  relevance: R
+  recent: DD
+
+experienceLevel:
+ internship: False
+ entry: True
+ associate: True
+ mid-senior level: True
+ director: False
+ executive: False
+ 
+jobTypes:
+ full-time: True
+ contract: True
+ part-time: True
+ temporary: True
+ internship: False
+ other: True
+ volunteer: False
+ 
+date:
+ all time: True
+ month: False
+ week: False
+ 24 hours: False
+ 
+positions:
+ - Software Engineer
+ - Software Developer
+ - programmer analyst
+ - Programmer
+ - software engineering
+# ------------------------------------------
+ - Software QA
+ - Testing Automation
+ - Cloud Engineer
+ - Devops
+ - SDET
+# ------------------------------------------
+ - Helpdesk
+ - it support
+ - software tester 
+ - software support
+locations:
+ - remote
+
+distance: 0
+
+maxNumberOfApplicants: 200
+
+#Set this to specify the number of pages to search through. If set to 0, it will go through all pages in the search.
+maxNumberOfPages: 5
+
+#Set this to specify if you want to skip jobs that are labeled as promoted
+skipPromoted: False
+
+#Minimum amount of time to spend on a page before moving to the next one. This is to prevent the bot from going too fast and getting flagged.
+minimumTimeOnPage: 5
+
+outputFileDirectory: /Apply-Bot
+
+companyBlacklist:
+ - savemart
+ - lucky
+ - LTK
+ - clayton 
+ - cognizant
+ - hpa
+ - stefanini
+ - helen ross
+ - cgi
+ - Trizetto
+ - jobot
+ - CyberCoders
+ - 21st
+#  - Brooksource
+ - VBeyond
+#  - Insight
+ - braintrust
+ - Intelerad
+ - Noir
+ - CivicActions
+ - upwork
+ - nerd wallet
+ - storm
+ - Wilshire
+ - driven insights
+ - crossover
+ - NotFound
+ - NLB
+
+titleBlacklist:
+ - senior
+ - principal
+ - sales
+ - ios
+ - android
+ - sr.
+ - director
+ - lead
+ - architect
+ - angular
+ - swift
+ - manager
+ - php
+ - axiom
+ - informatica
+ - sap
+ - salesforce
+ - java
+ - as400
+ - ruby
+ - sr
+ - hadoop
+ - laravel
+ - hybrid
+ - kafka
+ - gis
+ - founding
+ - startup
+ - start-up
+ - mainframe
+ - c+
+ - ansible
+ - cobol
+ - drupal
+ - sailpoint
+ - unity
+ - unreal
+ - game
+ - spark
+ - scala
+ - dynamics
+ - golang
+ - sharepoint
+ - mongodb
+ - peoplesoft
+ - perl
+ - magneto
+ - mulesoft
+ - apptio
+ - coach
+ - emmbed
+ - scada
+ - field
+ - firmware
+ - electrical
+ - executive
+ - onsite
+ - tax
+ - machine learning
+ - generative
+ - llm
+ - deep learning
+ - large language
+ - models
+ - clerk
+ - appian
+ - owner
+ - master
+ - station
+ - signage
+
+
+uploads:
+ resume: /Users/username/Documents/Resume.pdf
+ # Cover letter is optional
+ #coverLetter: C:\Users\myDirectory\CoverLettter.pdf
+
+
+# ------------ QA section -------------------
+
+# ------------ Additional parameters: checkboxes ---------------
+checkboxes:
+ # Do you have a valid driver's license? (yes/no checkbox)
+ driversLicence: True
+ # Will you now, or in the future, require sponsorship for employment visa status (e.g. H-1B visa status)? (yes/no checkbox)
+ # This is relative to the location and your citizenship applying above, and same with legallyAuthorized.
+ requireVisa: False
+ # Are you legally authorized to work in COUNTRY? (yes/no checkbox)
+ legallyAuthorized: True
+ # We must fill this position urgently. Can you start immediately? (yes/no checkbox)
+ urgentFill: True
+ # Are you comfortable commuting to this job's location? (yes/no checkbox)
+ commute: False
+ # Have you completed the following level of education: DEGREE TYPE? (yes/no checkbox)
+ degreeCompleted:
+  - High School Diploma
+  - Bachelor's Degree
+  - Associate's Degree
+  # - Master's Degree
+  # - Master of Business Administration
+  # - Doctor of Philosophy
+  # - Doctor of Medicine
+  # - Doctor of Law
+ # Are you willing to undergo a background check, in accordance with local law/regulations?
+ backgroundCheck: True
+
+# ------------ Additional parameters: univeristyGpa ---------------
+universityGpa: 4.0
+
+# ------------ Additional parameters: languages ---------------
+languages:
+ english: Native or bilingual # None, Conversational, Professional, Native or bilingual
+
+
+# ------------ Additional parameters: years of technology experience ---------------
+# How many years of work experience do you have using TECHNOLOGY? (whole numbers only)
+technology:
+ Support: 8
+ Engineering: 3
+ IT Operations: 8
+ JSON: 4
+ API: 4
+ Business: 6
+ Mircoservices: 3
+ Scripting: 3
+ REST: 4
+ Automation: 4
+ Operating Systems: 8
+ Help Desk: 8
+ Application Support: 8
+ Tech Support: 8
+ Programming: 4
+ customer service: 8
+ Information Technology: 8
+ Windows: 8
+ WordPress: 1
+ GitLab: 1
+ AWS: 2
+ SQL: 3
+ Adobe Acrobt: 4
+ Adobe XD: 2
+ Agile: 4
+ Scrum: 4
+ Kanban: 4
+ .NET: 3
+ IT auditing: 3
+ SaaS: 3
+ Bash: 2
+ C#: 3
+ DNS: 3
+ FTP: 2
+ NFS: 2
+ DHCP: 2
+ Java: 1
+ LAN: 2
+ SSL: 1
+ MVC: 1
+ VPN: 3
+ OOP: 4
+ SEO: 1
+ POS: 1
+ TCP: 2
+ UNIX: 1
+ Linux: 2
+ UX: 2
+ WAN: 3
+ HTML: 5
+ ECMA: 2
+ XML: 4
+ XSLT: 1
+ Xpath: 2
+ ServiceNow: 3
+ javascript: 4
+ Python: 3
+ Oracle: 4
+ Cloud: 3
+ HCM: 2
+ FCC: 2
+ Git: 4
+ Office: 6
+ DevOps: 1
+ Active Directory: 8
+ Software dev: 4
+ SharePoint: 2
+ SDLC: 3
+ Mainframe: 1
+ React: 1
+ Front-end development: 4
+ Angular: 1
+ Version Control: 4
+ Deployment: 4
+ TFS: 1
+ Web Dev: 5
+ Coding: 5
+ Software Engineer: 2
+ Software Deployment: 2
+ Excel: 8
+ CI/CD: 2
+ Web Dev: 5
+ Test automation: 3
+ Selenium: 3
+ Unit test: 2
+ Functional test: 2
+ SDET: 1
+ Communication: 8
+ Analytics: 2
+ Networking: 1
+ Database: 4
+ Back-end: 3
+ Jira: 4
+ Powershell: 3
+ Bitbucket: 3
+ RPA: 2
+ Debugging: 8
+ Microsoft Word: 10
+ Powerpoint: 10
+ SQL Server: 2
+ # default to put for any skill that you did not list
+ default: 2
+
+# ------------ Additional parameters: personal info ---------------
+personalInfo:
+ First Name: John
+ Last Name: Doe
+ Phone Country Code: United States (+1) # See linkedin for your country code, must be exact
+ Mobile Phone Number: (1)800-555-5555
+ Street address: 123 Main Street
+ City: Kalamazoo
+ State: Michigan
+ Zip: 49001
+ Linkedin: https://www.linkedin.com/in/my-linkedin-profile
+ Website: https://www.my-website.com # github/website is interchangable here
+
+# ------------ Additional parameters: USA employment crap ---------------
+eeo:
+ gender: Male
+ race: White
+ vetran: None
+ disability: None
+ citizenship: United States
