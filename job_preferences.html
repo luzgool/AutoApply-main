@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Preferences - Job Application Auto-Fill</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter var', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.5;
+            background: #ffffff; /* White background */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 20px; /* Increased space above labels */
+        }
+
+        input[type=text], input[type=submit] {
+            width: 100%;
+            padding: 15px; /* Increased padding for larger input fields */
+            margin-top: 5px;
+            margin-bottom: 20px; /* Increased space below inputs */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type=submit] {
+            background-color: #a1c9f1; /* Lighter blue */
+            color: white;
+            cursor: pointer;
+            font-size: 1.25em; /* Larger font size */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        input[type=submit]:hover {
+            background-color: #91b9d1; /* Slightly darker blue for hover effect */
+        }
+
+        .value-button {
+            display: inline-block;
+            margin: 10px; /* More space around buttons */
+            padding: 10px 20px;
+            border: 1px solid #d3d3d3; /* Grey border */
+            background-color: #f0f0f0; /* Grey background */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .value-button.active {
+            background-color: #a1c9f1; /* Lighter blue */
+            color: #fff; /* White text */
+        }
+
+        .next-button {
+            width: calc(100% - 30px); /* Adjust width to account for padding */
+            max-width: 300px; /* Maximum width */
+            padding: 20px; /* Bigger padding for a larger button */
+            margin: 20px auto; /* Center the button */
+            border: none;
+            background-color: #a1c9f1; /* Lighter blue */
+            color: #fff; /* White text */
+            cursor: pointer;
+            font-size: 1.25em; /* Larger font size */
+            display: block; /* Make it a block to center correctly */
+            border-radius: 10px; /* Rounded corners */
+            transition: background-color 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #91b9d1; /* Slightly darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Job Preferences</h1>
+        <!-- Button-like inputs for job titles -->
+        <div class="value-buttons">
+            <div class="value-button" data-value="Software Engineer">Software Engineer</div>
+            <div class="value-button" data-value="Data Analyst">Data Analyst</div>
+            <div class="value-button" data-value="Data Engineer">Data Engineer</div>
+            <div class="value-button" data-value="Data Scientist">Data Scientist</div>
+            <div class="value-button" data-value="Analytics Specialist">Analytics Specialist</div>
+            <div class="value-button" data-value="Summer Intern">Summer Intern</div>
+            <div class="value-button" data-value="Data Science Specialist">Data Science Specialist</div>
+            <div class="value-button" data-value="Data Science Intern">Data Science Intern</div>
+            <div class="value-button" data-value="Data Management Specialist">Data Management Specialist</div>
+            <div class="value-button" data-value="Operational Specialist">Operational Specialist</div>
+            <div class="value-button" data-value="Solutions Specialist">Solutions Specialist</div>
+            <div class="value-button" data-value="Machine Learning Specialist">Machine Learning Specialist</div>
+            <div class="value-button" data-value="Lead Data Scientist">Lead Data Scientist</div>
+            <div class="value-button" data-value="Artificial Intelligence Specialist">Artificial Intelligence Specialist</div>
+            <div class="value-button" data-value="Research Scientist">Research Scientist</div>
+            <div class="value-button" data-value="Integration Analyst">Integration Analyst</div>
+            <div class="value-button" data-value="Investment Manager">Investment Manager</div>
+            <!-- Add more buttons as needed -->
+        </div>
+
+        <form id="preferenceForm" action="/cgi-bin/handle_form.py" method="post">
+            <input type="hidden" name="next_page" value="personal_info.html">
+            <!-- Hidden inputs to store selected job titles -->
+            <input type="hidden" name="selected_titles" id="selectedTitles" value="">
+            <input type="submit" class="next-button" value="Next" onclick="submitForm()">
+        </form>
+    </div>
+
+    <script>
+        // JavaScript to handle button click and update hidden input
+        const buttons = document.querySelectorAll('.value-button');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Toggle 'active' class
+                this.classList.toggle('active');
+                // Update hidden input value
+                updateSelectedTitles();
+            });
+        });
+
+        function updateSelectedTitles() {
+            const selectedTitles = Array.from(document.querySelectorAll('.value-button.active'))
+                                       .map(button => button.getAttribute('data-value'));
+            document.getElementById('selectedTitles').value = selectedTitles.join(', ');
+        }
+
+        // Function to submit the form with selected job titles
+        function submitForm() {
+            // Ensure selected titles are updated before submitting
+            updateSelectedTitles();
+            document.getElementById('preferenceForm').submit();
+        }
+    </script>
+</body>
+</html>
+

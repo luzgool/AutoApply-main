@@ -8,7 +8,7 @@ from indeedautoapply import IndeedAutoApply
 from validate_email import validate_email
 import logging
 import yaml
-config_path = 'linkedinconfig.yaml'
+config_path = 'cgi-bin/linkedinconfig.yaml'
 with open(config_path, 'r') as file:
     config = yaml.safe_load(file)
 logging.basicConfig(
@@ -45,7 +45,7 @@ def init_browser():
 
 
 def validate_linkedin_yaml():
-    with open("linkedinconfig.yaml", "r") as stream:
+    with open("cgi-bin/linkedinconfig.yaml", "r") as stream:
         try:
             parameters = yaml.safe_load(stream)
         except yaml.YAMLError as exc:
@@ -154,7 +154,7 @@ def validate_linkedin_yaml():
 
 
 def validate_indeed_yaml():
-    with open("indeedconfig.yaml", "r") as stream:
+    with open("cgi-bin/indeedconfig.yaml", "r") as stream:
         try:
             parameters = yaml.safe_load(stream)
         except yaml.YAMLError as exc:

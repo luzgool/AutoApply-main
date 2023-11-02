@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Preference Test</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter var', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.5;
+            background: #ffffff; /* White background */
+        }
+
+        .progress-bar-container {
+            width: 80%; /* Wider progress bar */
+            height: 5px; /* Thinner progress bar */
+            background-color: #d3d3d3; /* Light grey for the unfilled part */
+            border-radius: 5px;
+            margin: 0 auto; /* Center the progress bar */
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 50%; /* Example filled part */
+            height: 100%;
+            background-color: #a1c9f1; /* Lighter blue */
+            border-radius: 5px;
+        }
+
+        h1, .subtitle, .select-up-to, .value-buttons, .next-button {
+            text-align: center;
+            margin-bottom: 20px; /* More space between elements */
+        }
+
+        .value-button {
+            display: inline-block;
+            margin: 10px; /* More space around buttons */
+            padding: 10px 20px;
+            border: 1px solid #d3d3d3; /* Grey border */
+            background-color: #f0f0f0; /* Grey background */
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .value-button.active {
+            background-color: #a1c9f1; /* Lighter blue */
+            color: #fff; /* White text */
+        }
+
+        .next-button {
+            display: block; /* Block display to allow margin auto to work */
+            width: 50%; /* Adjust width as needed */
+            max-width: 300px; /* Maximum width */
+            padding: 15px 30px; /* Bigger padding for a larger button */
+            margin: 40px auto; /* Top and bottom margin with auto to center horizontally */
+            border: none;
+            background-color: #a1c9f1; /* Lighter blue */
+            color: #fff; /* White text */
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 1.25em; /* Larger font size */
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        .next-button:hover {
+            background-color: #92b4d4; /* Slightly darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Job Preference Test</h1>
+    <div class="progress-bar-container">
+        <div class="progress-bar"></div>
+    </div>
+    <div class="subtitle">What do you value in a new role?</div>
+    <div class="select-up-to">Select up to 3</div>
+    <div class="value-buttons">
+        <div class="value-button" data-value="internship">Internship</div>
+        <div class="value-button active" data-value="entry">Entry</div>
+        <div class="value-button active" data-value="associate">Associate</div>
+        <div class="value-button active" data-value="mid-senior level">Mid-Senior Level</div>
+        <div class="value-button" data-value="director">Director</div>
+        <div class="value-button" data-value="executive">Executive</div>
+        <!-- Add more buttons as needed -->
+    </div>
+    <button type="button" class="next-button" onclick="submitForm()">Next</button>
+
+    <form id="preferenceForm" action="/cgi-bin/handle_form.py" method="post">
+        <input type="hidden" name="next_page" value="job_preferences.html">
+    </form>
+
+    <script>
+        // JavaScript to handle button click and toggle 'active' class
+        const buttons = document.querySelectorAll('.value-button');
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Count active buttons
+                const activeButtons = document.querySelectorAll('.value-button.active').length;
+                // Toggle if less than 3 or if this button is already active
+                if (activeButtons < 3 || this.classList.contains('active')) {
+                    this.classList.toggle('active');
+                }
+            });
+        });
+
+        // Function to submit the form
+        function submitForm() {
+            document.getElementById('preferenceForm').submit();
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information - Job Application Auto-Fill</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter var', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.5;
+            background: #ffffff; /* White background */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+        }
+
+        input[type=text], input[type=tel], input[type=submit] {
+            width: calc(100% - 40px); /* Adjust width to account for padding */
+            padding: 15px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type=submit] {
+            background-color: #a1c9f1; /* Lighter blue */
+            color: white;
+            cursor: pointer;
+            font-size: 1.25em; /* Larger font size */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+            border: none;
+            border-radius: 10px; /* Rounded corners */
+        }
+
+        input[type=submit]:hover {
+            background-color: #91b9d1; /* Slightly darker blue for hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Personal Information</h1>
+        <form action="/cgi-bin/handle_form.py" method="post">
+            <input type="hidden" name="next_page" value="eeo_info.html">
+
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required placeholder="Your first name"><br>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required placeholder="Your last name"><br>
+
+            <label for="contactNumber">Contact Number:</label>
+            <input type="tel" id="contactNumber" name="contactNumber" placeholder="Your contact number"><br>
+
+            <!-- Include additional fields as needed -->
+
+            <input type="submit" class="next-button" value="Next">
+        </form>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EEO Information - Job Application Auto-Fill</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter var', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.5;
+            background: #ffffff; /* White background */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 20px;
+        }
+
+        select {
+            width: calc(100% - 40px); /* Adjust width to account for padding */
+            padding: 15px;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        input[type=submit] {
+            width: calc(100% - 40px); /* Adjust width to account for padding */
+            padding: 15px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #a1c9f1; /* Lighter blue */
+            color: white;
+            cursor: pointer;
+            font-size: 1.25em; /* Larger font size */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+
+        input[type=submit]:hover {
+            background-color: #91b9d1; /* Slightly darker blue for hover effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>EEO Information</h1>
+        <form action="/cgi-bin/handle_form.py" method="post">
+            <input type="hidden" name="next_page" value="confirmation.html">
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select...</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="non-binary">Non-Binary</option>
+                <!-- Add other gender options as needed -->
+            </select><br>
+
+            <label for="race">Race/Ethnicity:</label>
+            <select id="race" name="race" required>
+                <option value="">Select...</option>
+                <option value="white">White</option>
+                <option value="black">Black or African American</option>
+                <option value="hispanic">Hispanic or Latino</option>
+                <option value="asian">Asian</option>
+                <option value="native">American Indian or Alaska Native</option>
+                <option value="hawaiian">Native Hawaiian or Other Pacific Islander</option>
+                <option value="two_or_more">Two or More Races</option>
+                <!-- Add other race options as needed -->
+            </select><br>
+
+            <label for="veteranStatus">Veteran Status:</label>
+            <select id="veteranStatus" name="veteranStatus" required>
+                <option value="">Select...</option>
+                <option value="veteran">Veteran</option>
+                <option value="not_veteran">Not a Veteran</option>
+                <!-- Add other veteran status options as needed -->
+            </select><br>
+
+            <!-- Include additional EEO fields as needed -->
+
+            <input type="submit" class="next-button" value="Submit Application">
+        </form>
+    </div>
+</body>
+</html>
